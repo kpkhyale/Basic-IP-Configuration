@@ -1,0 +1,33 @@
+router-1
+
+en
+conf t
+hostname R-1
+int fa0/0
+ip add 192.168.1.1 255.255.255.0
+no shut
+
+exit
+
+
+int s0/0
+ip add 10.0.0.1 255.0.0.0
+clock rate 64000
+bandwidth 64
+no shut
+
+
+
+router-2
+
+en
+conf t
+hostname R-2
+ip add 192.168.2.1 255.255.255.0
+no shut
+exit
+
+s0/0
+int ip 10.0.0.2 255.0.0.0
+no shut
+clock rate 64000
